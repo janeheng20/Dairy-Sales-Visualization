@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dairy Dashboard 1</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="dashboard1.css">
+</head>
+<body>
+  <div class="dashboard-header">
+    <h2>🐮 Moo Data, More Revenue 💰</h2>
+  </div>
+
+  <div class="controls">
+    <div class="year-reset-group">
+        Year selected: <span id="currentYear">All Years</span>
+      <button id="resetYearBtn" class="reset-btn">Reset Year</button>
+    </div>
+
+    <label for="brandSelect">Brand:</label>
+    <select id="brandSelect">
+      <option value="All">All Brands</option>
+    </select>
+
+    <label for="monthSelect">Month:</label>
+    <select id="monthSelect">
+      <option value="All">All Months</option>
+    </select>
+
+    <label for="locationSelect">Location:</label>
+    <select id="locationSelect">
+      <option value="All">All Locations</option>
+    </select>
+  </div>
+<div class="chart-container">
+  <div class="top-row">
+    <div class="metrics-container">
+        <div class="metric-card">
+            <img src="img/Cow.jpg" alt="Cow" class="metric-icon">
+            <div class="metric-value" id="cowCountValue">-</div>
+        </div>
+
+        <div class="metric-card">
+            <img src="img/Farm.jpg" alt="Farm" class="metric-icon">
+                <div id="farmInfoValue">
+                    <div id="farmSize" class="metric-value"></div>
+                    <div id="totalLand" class="metric-value"></div>
+                </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-text">
+            <div class="metric-label">Total Revenue</div>
+            <div class="metric-value" id="revenueValue">-</div>
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-text">
+            <div class="metric-label">Best Selling</div>
+            <div class="metric-value" id="bestProductValue">-</div>
+            </div>
+        </div>
+    </div>
+
+        <div class="chart-wrapper">
+            <svg id="mapChart" width="750" height="440"></svg>
+        </div>
+        <div class="chart-wrapper">
+            <svg id="salesPieChart" width="500" height="380"></svg> 
+        </div>
+</div>
+
+    <div class="bottom-row">
+        <div class="chart-wrapper">
+            <svg id="revenueLineChart" width="650" height="400"></svg>
+        </div>
+        <div class="chart-wrapper">
+            <svg id="qtySoldBarChart" width="600" height="400"></svg>
+        </div>
+    </div>
+</div>
+  
+<div class="tooltip1" id="tooltip1"></div>
+<div class="tooltip1" id="tooltip2"></div>
+<div class="tooltip1" id="tooltip3"></div>
+<div class="tooltip1" id="tooltip4"></div>
+
+  <script src="dataManager.js"></script>
+  <script src="mapChart.js"></script>
+  <script src="metrics.js"></script>
+  <script src="pieChart.js"></script>
+  <script src="revenueLineChart.js"></script>
+  <script src="qtySoldBarChart.js"></script>
+  <script type="module" src="dashboard1.js"></script>
+</body>
+</html>
